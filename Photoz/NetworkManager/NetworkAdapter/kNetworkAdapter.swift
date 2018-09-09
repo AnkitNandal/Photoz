@@ -39,6 +39,7 @@ class kNetworkAdapter: NSObject,KOperationDelegate {
     
     // MARK:- Photo Search API
     func getPhotosSearchResult(searchTerm:String,pageNo:Int, completionBlock:@escaping NACompletionBlock) {
+        if !isNeworkReachable {return}
         let searchParams = KSearchOperationParamters(query: searchTerm, pageNumber: pageNo)
         let searchOperation = KSearchOperation(searchParameter: searchParams,executeOnService:GetService.getService())
         searchOperation.delegate = self
@@ -63,7 +64,6 @@ extension kNetworkAdapter {
     
     // Network Availability Listner
     func startNetworkReachabilityObserver() {
-        
         reachabilityManager?.listener = { status in
             switch status {
                 
@@ -96,6 +96,10 @@ extension kNetworkAdapter {
         guard networkConnectionBanner != nil else {return}
         networkConnectionBanner?.dismiss()
         networkConnectionBanner = nil
+    }
+    
+    var isNeworkReachable:Bool {
+        return self.reachabilityManager?.isReachable ?? false
     }
 }
 
