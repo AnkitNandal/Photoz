@@ -72,7 +72,6 @@ extension kNetworkAdapter {
                 self.networkDisconnected()
             case .unknown :
                 print("It is unknown whether the network is reachable")
-                
             case .reachable(.ethernetOrWiFi):
                 print("The network is reachable over the WiFi connection")
                 self.networkReConnected()
@@ -90,6 +89,7 @@ extension kNetworkAdapter {
     func networkDisconnected() {
         networkConnectionBanner = StatusBarNotificationBanner(title: ConfigName.Alert.noNetwork, style: .warning)
         networkConnectionBanner?.show()
+        ApplicationSetup.shared.shouldShowNetworkActivity(false)
     }
     
     func networkReConnected() {
