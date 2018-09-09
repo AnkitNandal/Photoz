@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.3)
+  - FTLinearActivityIndicator (1.0.4)
+  - MarqueeLabel/Swift (3.1.6)
+  - NotificationBannerSwift (1.6.3):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 4.0)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - FTLinearActivityIndicator
+  - NotificationBannerSwift
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  FTLinearActivityIndicator: 0c4ff2067cd67d88fd932ec214da90083ea7148e
+  MarqueeLabel: 0c41f08ef5773e29c0f71064a8fa788a2fd8b365
+  NotificationBannerSwift: b231e4c3244848ef300e1c53ce027b9756b9b06f
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: a4d170e8ec0ee9a05295b170b0239ac0b5611ff4
+
+COCOAPODS: 1.3.1
